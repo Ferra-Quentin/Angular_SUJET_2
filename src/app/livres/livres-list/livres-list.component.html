@@ -13,6 +13,7 @@
             <th>GENRE</th>
             <th>TÉLÉCHARGEMENT</th>
             <th>LECTURE</th>
+            <th id="actionSquare">ACTION</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
             </p></td>
             <td>{{livre.downloadNumber}}</td>
             <td>{{livre.readNumber}}</td>
+            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.id)">Lire</button><button class="addBtn" (click)="addToLibrary(livre.id)">Add</button></td>
         </tr>
         </tbody>
     </table>

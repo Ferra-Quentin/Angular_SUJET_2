@@ -1,0 +1,16 @@
+<div *ngIf="livre" id="livre">
+    <div id="titreLivre">
+        <h1>{{livre.name}}</h1>
+    </div>
+    <div id="descLivre">
+        <h3>{{livre.author}}</h3>
+        <h3 *ngFor="let genre of livre.type">{{genre}}</h3>
+    </div>
+
+    <div *ngIf="pagesLivre" id="bookContent">
+        <p class="bookLine" *ngFor="let page of pagesLivre">
+            {{page.image}}
+        </p>
+    </div>
+
+</div>

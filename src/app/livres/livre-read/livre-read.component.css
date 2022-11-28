@@ -1,0 +1,23 @@
+#descLivre {
+    display: flex;
+}
+
+#descLivre h3 {
+    padding: 1rem;
+}
+
+#livre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#bookContent {
+    width: 70%;
+}
+
+.bookLine {
+    line-height: 30px;
+    padding-bottom: 1rem;
+}

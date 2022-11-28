@@ -7,10 +7,11 @@ import {LivresModel} from './livres.model';
 })
 export class LivresServiceService {
 
+  livres = listLivres
+
   constructor() { }
 
-  //GET ALL
-  static getLivresList() {
-    return listLivres;
+  getLivresList() {
+    return this.livres;
   }
 }

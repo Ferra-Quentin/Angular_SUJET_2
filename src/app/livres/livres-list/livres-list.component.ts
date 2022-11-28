@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LivresModel} from '../livres.model';
 import {LivresServiceService} from '../livres-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-livres-list',
@@ -11,10 +12,18 @@ export class LivresListComponent implements OnInit {
 
   livres : LivresModel[];
 
-  constructor() { }
+  constructor(private router:Router,private livreService: LivresServiceService) { }
 
   ngOnInit(): void {
-    this.livres = LivresServiceService.getLivresList();
+    this.livres = this.livreService.getLivresList();
+  }
+
+  addToLibrary(idLivre:number){
+
+  }
+
+  readBook(idLivre:number){
+    this.router.navigate(["livre",idLivre])
   }
 
 }
