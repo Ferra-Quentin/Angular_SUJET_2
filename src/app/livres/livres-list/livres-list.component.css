@@ -1,0 +1,30 @@
+#titreList{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#listeLivres{
+    width: 90%;
+    border-collapse: collapse;
+}
+
+#listContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#lignePresentation{
+    height: 3rem;
+    border-bottom: 2px solid #D26240;
+}
+
+th{
+    text-align: left;
+    min-width: 3rem;
+}
+
+.ligneLivre{
+    height: 80px;
+}
+
