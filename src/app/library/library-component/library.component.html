@@ -1,1 +1,31 @@
-<p>library works!</p>
+<div id="titreLibrary">
+    <h1>Bibilothèque</h1>
+</div>
+
+
+<div id="libraryBookContainer">
+    <table *ngIf="livres" id="listeLivresLibrary">
+        <thead>
+        <tr id="lignePresentationLibrary">
+            <th>ID</th>
+            <th>NOM</th>
+            <th>AUTEUR</th>
+            <th>DATE DE SORTIE</th>
+            <th>GENRE</th>
+            <th id="actionSquare">ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="ligneLivre" *ngFor="let livre of livres">
+            <td>{{livre.id}}</td>
+            <td>{{livre.name}}</td>
+            <td>{{livre.author}}</td>
+            <td>{{livre.releaseDate}}</td>
+            <td>{{livre.type}}</td>
+            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.id)">Lire</button><button class="delBtn" (click)="delLivre(livre)" >Retirer</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+

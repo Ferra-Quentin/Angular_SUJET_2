@@ -3,7 +3,7 @@ import {libraryModel} from '../library.model';
 
 export class LibraryBookModel{
     id:number;
-    livres:LivresModel;
-    library:libraryModel;
-    etat:boolean;
+    livres:number;
+    library:number;
+    read:boolean;
 }
