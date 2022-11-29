@@ -17,6 +17,7 @@ export class LibraryService {
   constructor() { }
 
   getBookInLibrary(){
+    this.livres=[]
     this.livresLibrary.forEach(book => {
       if(book.library==1){
         this.toutLesLivres.forEach(livre=>{

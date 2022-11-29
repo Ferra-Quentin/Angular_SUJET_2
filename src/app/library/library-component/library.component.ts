@@ -16,7 +16,6 @@ export class LibraryComponent implements OnInit {
 
   ngOnInit(): void {
     this.livres = this.libraryService.getBookInLibrary();
-    console.table(this.livres)
   }
 
   delLivre(livre:LivresModel){
