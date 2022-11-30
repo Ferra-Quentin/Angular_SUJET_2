@@ -1,0 +1,19 @@
+<div id="logContainer">
+    <p>{{errMessage}}</p>
+    <form #logginForm='ngForm' id="formulaireLogin">
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+
+        <div class="card-action center">
+            <button [disabled]="!logginForm.form.valid" (click)="login()">Se connecter</button>
+        </div>
+    </form>
+</div>
+

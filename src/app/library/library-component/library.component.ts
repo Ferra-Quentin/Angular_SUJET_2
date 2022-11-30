@@ -10,16 +10,21 @@ import {Router} from '@angular/router';
 })
 export class LibraryComponent implements OnInit {
 
-  livres:LivresModel[];
+  livres:LivresModel[]=[];
 
   constructor(private libraryService : LibraryService,private router:Router) { }
 
   ngOnInit(): void {
-    this.livres = this.libraryService.getBookInLibrary();
+   this.libraryService.getBookInLibrary(1).subscribe(result=>{
+      this.livres=result
+    });
   }
 
   delLivre(livre:LivresModel){
-    this.libraryService.removeBook(livre)
+    this.livres.splice(this.livres.indexOf(livre),1)
+    this.libraryService.removeBook(livre.id,1).subscribe(result=>{
+
+    })
   }
 
 

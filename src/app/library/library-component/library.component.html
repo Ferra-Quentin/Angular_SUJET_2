@@ -4,7 +4,7 @@
 
 
 <div id="libraryBookContainer">
-    <table *ngIf="livres" id="listeLivresLibrary">
+    <table *ngIf="livres.length!=0" id="listeLivresLibrary">
         <thead>
         <tr id="lignePresentationLibrary">
             <th>ID</th>
@@ -26,7 +26,7 @@
         </tr>
         </tbody>
     </table>
-    <h3 *ngIf="!livres">Aucun livre dans la bibliothèque</h3>
+    <h3 *ngIf="livres.length==0">Aucun livre dans la bibliothèque</h3>
 </div>
 
 

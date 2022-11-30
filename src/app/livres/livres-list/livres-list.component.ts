@@ -15,7 +15,9 @@ export class LivresListComponent implements OnInit {
   constructor(private router:Router,private livreService: LivresServiceService) { }
 
   ngOnInit(): void {
-    this.livres = this.livreService.getLivresList();
+    this.livreService.getLivresList().subscribe((resultat)=>{
+      this.livres = resultat;
+    });
   }
 
   addToLibrary(idLivre:number){

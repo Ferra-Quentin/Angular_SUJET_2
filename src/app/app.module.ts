@@ -6,6 +6,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {LivresModule} from './livres/livres.module';
 import { PagesComponent } from './pages/pages.component';
 import {LibraryModule} from './library/library.module';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {LoginModule} from './login/login.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,11 @@ import {LibraryModule} from './library/library.module';
     BrowserModule,
       LivresModule,
       LibraryModule,
+      LoginModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
 import {pageModel} from './page.model';
-import {lesPages} from './page-mock';
+import {environment} from '../../environments/environment.prod';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
+
+const baseUrl = `${environment.endpoint}pages/`;
+const httpOption = {
+  headers:new HttpHeaders({
+    'Content-type':'application/json',
+    'Access-Control-Allow-Origin':'*'
+  })
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PageService {
 
+
+
   pagesLivre:pageModel[]=[];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
 
   getPageByLivreID(idLivre:number){
-    lesPages.forEach(page => {
-      if(page.livre == idLivre){
-        this.pagesLivre.push(page);
-      }
-    })
-    return this.pagesLivre;
+    return this.http.get<pageModel[]>(baseUrl+idLivre,httpOption)
   }
 }

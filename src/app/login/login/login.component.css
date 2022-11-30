@@ -1,0 +1,32 @@
+#logContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0 5rem 0;
+}
+
+#formulaireLogin {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #D26240;
+    border-radius: 40px;
+}
+
+#formulaireLogin div{
+    padding: 2rem;
+}
+
+#formulaireLogin input{
+    border:none;
+    font-size: 18px;
+    border-bottom: 1px solid #D26240;
+    margin-left: 10px;
+}
+
+#formulaireLogin input:focus{
+    outline: none;
+}
