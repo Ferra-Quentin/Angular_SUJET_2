@@ -44,8 +44,8 @@ export class LibraryComponent implements OnInit {
         this.router.navigate(["livre", idLivre])
     }
 
-    genreCocher(genre: string, activer: boolean) {
-        if (activer) {
+    genreCocher(genre: string, activerType: boolean) {
+        if (activerType) {
             this.genreSelectionner.push(genre)
         } else {
             this.genreSelectionner.splice(this.genreSelectionner.indexOf(genre), 1)
@@ -58,19 +58,31 @@ export class LibraryComponent implements OnInit {
         this.genreSelectionner.forEach(genre => {
             this.toutLesBook.forEach(livre => {
                 if (livre.Book.type.indexOf(genre) != -1) {
-                    this.livres.push(livre)
+                    if(this.authorName!=''){
+                        if(livre.Book.author.includes(this.authorName)){
+                            this.livres.push(livre)
+                        }
+                    }else{
+                        this.livres.push(livre)
+                    }
                 }
             })
         })
         if (this.livres.length == 0) {
             this.livres = this.toutLesBook
+            this.searchByAuthorName()
         }
     }
 
-    searchByAuthorName(name:string){
+    enterAuthor(name:string){
+        this.authorName=name
+        this.filterByGender()
+    }
+
+    searchByAuthorName(){
         this.livres=[]
         this.toutLesBook.forEach(livre=>{
-            if(livre.Book.author.includes(name)){
+            if(livre.Book.author.includes(this.authorName)){
                 this.livres.push(livre)
             }
         })
