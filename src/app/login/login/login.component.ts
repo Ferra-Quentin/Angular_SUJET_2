@@ -17,14 +17,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
-    const login = this.authService.login(this.username,this.password);
-    if(login){
-      this.router.navigate(['livres'])
-    }
-    else{
-      this.errMessage="Utilisateur ou mot de passe incorrecte";
-    }
+  async login() {
+    (await this.authService.login(this.username, this.password)).subscribe(result=>{
+      if (result) {
+        this.router.navigate(['livres'])
+      } else {
+        this.errMessage = "Utilisateur ou mot de passe incorrecte";
+      }
+    });
+
   }
 
 }

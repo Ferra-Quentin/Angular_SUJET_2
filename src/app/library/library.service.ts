@@ -18,8 +18,8 @@ export class LibraryService {
   constructor(private http:HttpClient) { }
   libraryBook:LivresModel[]
 
-  getBookInLibrary(idLibrary:number){
-    return this.http.get<LivresModel[]>(baseUrl+idLibrary,httpOption)
+  getBookInLibrary(idLibrary: string | null){
+    return this.http.get<any[]>(baseUrl+idLibrary,httpOption)
   }
 
   removeBook(idLivre:number,idLibrary:number){

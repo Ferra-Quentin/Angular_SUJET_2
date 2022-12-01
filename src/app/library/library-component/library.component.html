@@ -4,6 +4,9 @@
 
 
 <div id="libraryBookContainer">
+    <div id="filter">
+        <div *ngFor="let type of gender"><input #activer type="checkbox" id="{{type}}" (change)="genreCocher(type,activer.checked)"><label for="{{type}}">{{type}}</label></div>
+    </div>
     <table *ngIf="livres.length!=0" id="listeLivresLibrary">
         <thead>
         <tr id="lignePresentationLibrary">
@@ -12,17 +15,20 @@
             <th>AUTEUR</th>
             <th>DATE DE SORTIE</th>
             <th>GENRE</th>
+            <th>Lu</th>
             <th id="actionSquare">ACTION</th>
         </tr>
         </thead>
         <tbody>
         <tr class="ligneLivre" *ngFor="let livre of livres">
-            <td>{{livre.id}}</td>
-            <td>{{livre.name}}</td>
-            <td>{{livre.author}}</td>
-            <td>{{livre.releaseDate}}</td>
-            <td>{{livre.type}}</td>
-            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.id)">Lire</button><button class="delBtn" (click)="delLivre(livre)" >Retirer</button></td>
+            <td>{{livre.Book.id}}</td>
+            <td>{{livre.Book.name}}</td>
+            <td>{{livre.Book.author}}</td>
+            <td>{{livre.Book.releaseDate}}</td>
+            <td>{{livre.Book.type}}</td>
+            <td *ngIf="livre.read"><p class="rond" style="background-color:green;"></p></td>
+            <td *ngIf="!livre.read"><p class="rond" style="background-color:red;"></p></td>
+            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.Book.id)">Lire</button><button class="delBtn" (click)="delLivre(livre)" >Retirer</button></td>
         </tr>
         </tbody>
     </table>

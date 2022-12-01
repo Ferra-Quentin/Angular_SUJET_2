@@ -21,7 +21,7 @@ export class LivresListComponent implements OnInit {
   }
 
   addToLibrary(idLivre:number){
-
+    this.livreService.addBookInLibrary(idLivre)
   }
 
   readBook(idLivre:number){
