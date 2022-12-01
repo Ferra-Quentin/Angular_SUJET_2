@@ -13,6 +13,7 @@ export class LibraryComponent implements OnInit {
     livres: any[] = []
     gender: string[] = []
     genreSelectionner: string[] = []
+    authorName:string = ''
 
     constructor(private libraryService: LibraryService, private router: Router) {
     }
@@ -65,5 +66,17 @@ export class LibraryComponent implements OnInit {
             this.livres = this.toutLesBook
         }
     }
+
+    searchByAuthorName(name:string){
+        this.livres=[]
+        this.toutLesBook.forEach(livre=>{
+            if(livre.Book.author.includes(name)){
+                this.livres.push(livre)
+            }
+        })
+        this.livres.length == 0 ? this.livres = this.toutLesBook:null
+    }
+
+
 
 }

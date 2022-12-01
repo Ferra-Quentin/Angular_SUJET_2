@@ -5,7 +5,10 @@
 
 <div id="libraryBookContainer">
     <div id="filter">
+        <p>Genre :</p>
         <div *ngFor="let type of gender"><input #activer type="checkbox" id="{{type}}" (change)="genreCocher(type,activer.checked)"><label for="{{type}}">{{type}}</label></div>
+        <p>Auteur :</p>
+        <div><input #name type="text" (keyup)="searchByAuthorName(name.value)"></div>
     </div>
     <table *ngIf="livres.length!=0" id="listeLivresLibrary">
         <thead>
