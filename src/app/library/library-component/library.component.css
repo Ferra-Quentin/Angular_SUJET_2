@@ -5,13 +5,13 @@
 }
 
 #listeLivresLibrary{
-    width: 90%;
+    width: 70%;
     border-collapse: collapse;
 }
 
 #libraryBookContainer{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #lignePresentationLibrary{
@@ -45,16 +45,37 @@ th{
     background-color: #86d27f;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .addBtn{
     background-color: #5accd2;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .delBtn{
     background-color: indianred;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
+}
+
+.rond{
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    height: 2rem;
+    width: 2rem;
+}
+
+#filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 350px;
+}
+
+#filter div input{
+    margin-right: 1rem;
 }

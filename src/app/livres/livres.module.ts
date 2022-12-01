@@ -11,16 +11,13 @@ import {AuthGuard} from '../auth.guard';
 import { LivreFormComponent } from './livre-form/livre-form.component';
 import {FormsModule} from "@angular/forms";
 
-
-
-
 const livresRoute:Routes = [
   {path:'livres',component:LivresListComponent,canActivate:[AuthGuard]},
-  {path:'livre/:id',component:LivreReadComponent,canActivate:[AuthGuard]},
   {path:'livre-edit/:id',component:BookDetailComponent,canActivate:[AuthGuard]},
-  {path:'livre',component:CreateBookComponent,canActivate:[AuthGuard]}
-]
+  {path:'livre',component:CreateBookComponent,canActivate:[AuthGuard]},
+  {path:'livre/:id/:idLib',component:LivreReadComponent,canActivate:[AuthGuard]}
 
+]
 
 @NgModule({
   declarations: [

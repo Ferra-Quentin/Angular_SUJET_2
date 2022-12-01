@@ -45,12 +45,14 @@ th{
     background-color: #86d27f;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .addBtn{
     background-color: #5accd2;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 .editBtn{
   background-color: #5a76d2;

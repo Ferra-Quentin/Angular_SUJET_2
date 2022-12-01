@@ -5,5 +5,5 @@ export class userModel{
     username:string;
     password:string;
     role:string;
-    idBibliotheque:number;
+    idLibrary:number;
 }
