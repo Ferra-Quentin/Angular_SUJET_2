@@ -40,8 +40,8 @@ export class LibraryComponent implements OnInit {
     }
 
 
-    readBook(idLivre: number) {
-        this.router.navigate(["livre", idLivre])
+    readBook(idLivre: number,idBooKLib:number) {
+        this.router.navigate(["livre", idLivre,idBooKLib])
     }
 
     genreCocher(genre: string, activerType: boolean) {

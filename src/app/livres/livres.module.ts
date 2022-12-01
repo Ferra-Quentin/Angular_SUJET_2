@@ -8,7 +8,7 @@ import {AuthGuard} from '../auth.guard';
 
 const livresRoute:Routes = [
   {path:'livres',component:LivresListComponent,canActivate:[AuthGuard]},
-  {path:'livre/:id',component:LivreReadComponent,canActivate:[AuthGuard]}
+  {path:'livre/:id/:idLib',component:LivreReadComponent,canActivate:[AuthGuard]}
 ]
 
 

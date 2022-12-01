@@ -31,7 +31,7 @@
             <td>{{livre.Book.type}}</td>
             <td *ngIf="livre.read"><p class="rond" style="background-color:green;"></p></td>
             <td *ngIf="!livre.read"><p class="rond" style="background-color:red;"></p></td>
-            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.Book.id)">Lire</button><button class="delBtn" (click)="delLivre(livre)" >Retirer</button></td>
+            <td class="actionButton"><button class="readBtn" (click)="readBook(livre.Book.id,livre.id)">Lire</button><button class="delBtn" (click)="delLivre(livre)" >Retirer</button></td>
         </tr>
         </tbody>
     </table>

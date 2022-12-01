@@ -1,6 +1,6 @@
 export class pageModel{
     id: number;
-    numero:number;
+    number:number;
     image:string;
-    livre:number;
+    bookId:number;
 }
