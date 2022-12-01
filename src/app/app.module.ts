@@ -10,11 +10,14 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {LoginModule} from './login/login.module';
 import {FormsModule} from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     PagesComponent,
+
   ],
   imports: [
     BrowserModule,

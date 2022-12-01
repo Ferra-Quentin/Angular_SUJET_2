@@ -1,0 +1,59 @@
+<form *ngIf="livre" (ngSubmit)="onSubmit()"  #livreform="ngForm">
+
+  <div>
+    <div>
+      <label for="name">Name</label>
+      <input value="{{livre.name}}" type="text" [(ngModel)]="livre.name" #name="ngModel" name="name" maxlength="255">
+    </div>
+    <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+      NaN
+    </div>
+
+    <div>
+      <label for="author">Author</label>
+      <input value="{{livre.author}}"  type="text" [(ngModel)]="livre.author" #author="ngModel" name="author" maxlength="255">
+    </div>
+    <div [hidden]="author.valid || author.pristine" class="card-panel red accent-1">
+      NaN
+    </div>
+    <div>
+      <label for="type">Type</label>
+      <input value="{{livre.type}}"  type="text" [(ngModel)]="livre.type" #type="ngModel" name="type" maxlength="255">
+    </div>
+    <div [hidden]="type.valid || type.pristine" class="card-panel red accent-1">
+      Not a type
+    </div>
+    <div>
+      <label for="releaseDate">Release date</label>
+      <input value="{{livre.releaseDate}}"  type="text" [(ngModel)]="livre.releaseDate" #releaseDate="ngModel" name="releaseDate" maxlength="255">
+    </div>
+    <div [hidden]="releaseDate.valid || releaseDate.pristine" class="card-panel red accent-1">
+      NaN
+    </div>
+
+    <div>
+      <label for="downloadNumber">Endorsed</label>
+      <input value="{{livre.downloadNumber}}" type="text" [(ngModel)]="livre.downloadNumber" #downloadNumber="ngModel" name="downloadNumber" maxlength="255">
+    </div>
+
+    <div [hidden]="downloadNumber.valid || downloadNumber.pristine" class="card-panel red accent-1">
+      NaN
+    </div>
+
+    <div>
+      <label for="readNumber">Read</label>
+      <input value="{{livre.readNumber}}"  type="text" [(ngModel)]="livre.readNumber" #readNumber="ngModel" name="readNumber"
+             maxlength="255">
+    </div>
+    <div [hidden]="readNumber.valid || readNumber.pristine" class="card-panel red accent-1">
+      NaN
+    </div>
+
+    <div class="btnValid">
+      <button [disabled]="!livreform.form.valid" type="submit">
+        Valider
+      </button>
+    </div>
+  </div>
+</form>
+<h3 *ngIf="!livre">Pas de livres ma gueule</h3>

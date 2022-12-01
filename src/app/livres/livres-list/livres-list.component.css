@@ -52,3 +52,19 @@ th{
     border: none;
     border-radius: 20px;
 }
+.editBtn{
+  background-color: #5a76d2;
+  border: none;
+  border-radius: 20px;
+}
+.deleteBtn{
+  background-color: #d25a5a;
+  border: none;
+  border-radius: 20px;
+}
+.deleteBtn:hover{
+  background-color: #d25a5a;
+  border: none;
+  border-radius: 20px;
+
+}

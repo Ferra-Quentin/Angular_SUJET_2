@@ -15,17 +15,27 @@ export class LivresListComponent implements OnInit {
   constructor(private router:Router,private livreService: LivresServiceService) { }
 
   ngOnInit(): void {
+
     this.livreService.getLivresList().subscribe((resultat)=>{
       this.livres = resultat;
     });
   }
 
   addToLibrary(idLivre:number){
-
+      this.router.navigate( ["livre"])
   }
 
   readBook(idLivre:number){
     this.router.navigate(["livre",idLivre])
   }
+  goToBookEdit(livre : number) {
+    this.router.navigate(['livre-edit',livre] );
+  }
+  goToDeleteBook(livre : number) {
+    this.livreService.deleteLivre(livre).subscribe(() => {
+      this.router.navigate(['livres'])
+    })
+  }
+
 
 }
