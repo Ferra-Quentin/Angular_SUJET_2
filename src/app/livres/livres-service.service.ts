@@ -22,7 +22,7 @@ export class LivresServiceService {
   constructor(private http: HttpClient) {
   }
   createBook( livre : LivresModel) : Observable<LivresModel>{
-    return this.http.post<LivresModel>(baseUrl,livre, httpOption)
+    return this.http.post<LivresModel>(`${environment.endpoint}book/`,livre, httpOption)
   }
 
   getLivresList() {
@@ -34,8 +34,8 @@ export class LivresServiceService {
     return this.http.get<LivresModel>(`${environment.endpoint}book/${livreId}`, httpOption)
   }
 
-  deleteLivre(livreId: number): Observable<LivresModel | any> {
-    return this.http.get<LivresModel>(`${baseUrl}/${livreId}`, httpOption)
+  deleteLivre(livreId: number){
+    return this.http.delete(`${environment.endpoint}book/${livreId}`, httpOption)
   }
   editLivres(livre: LivresModel): Observable<any>{
 

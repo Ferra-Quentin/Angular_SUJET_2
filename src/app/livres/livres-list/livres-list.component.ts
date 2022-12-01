@@ -32,9 +32,7 @@ export class LivresListComponent implements OnInit {
     this.router.navigate(['livre-edit',livre] );
   }
   goToDeleteBook(livre : number) {
-    this.livreService.deleteLivre(livre).subscribe(() => {
-      this.router.navigate(['livres'])
-    })
+    this.livreService.deleteLivre(livre).subscribe()
   }
 
 

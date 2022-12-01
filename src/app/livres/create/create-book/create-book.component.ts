@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {LivresModel} from "../../livres.model";
 
 @Component({
   selector: 'app-create-book',
   template: `
-    <p>
-      create-book works!
-    </p>
+  <app-livre-form [livre]=livre></app-livre-form>
   `,
   styles: [
   ]
 })
-export class CreateBookComponent implements OnInit {
+export class CreateBookComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  livre : LivresModel = new LivresModel();
 
 }
