@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {listLivres} from './livres-mock'
 import {LivresModel} from './livres.model';
 import {environment} from '../../environments/environment.prod';
 import {HttpClient, HttpHeaders} from '@angular/common/http';

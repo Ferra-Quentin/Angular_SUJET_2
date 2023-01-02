@@ -25,7 +25,7 @@ export class LivresListComponent implements OnInit {
   }
 
   readBook(idLivre:number){
-    this.router.navigate(["livre",idLivre])
+    this.router.navigate(["livre",idLivre,localStorage.getItem('Bibliotheque')])
   }
 
 }
